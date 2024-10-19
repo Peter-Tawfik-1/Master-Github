@@ -20,6 +20,9 @@ resource "google_compute_instance" "default" {
   boot_disk {
     initialize_params {
       image = "rhel-9-v20241009"
+      labels = {
+        my_label = "database-instance"
+      }
     }
   }
 
@@ -27,4 +30,27 @@ resource "google_compute_instance" "default" {
     network = "default"
     access_config {}
   }
+
+  metadata_startup_script = <<-EOF
+    #!/bin/bash
+    echo "Hello, World!" > /var/www/html/index.html
+    sudo yum update -y
+    sudo yum install -y httpd
+    sudo systemctl start httpd
+  EOF
+}
+
+resource "google_dns_managed_zone" "my_zone" {
+  name     = "test"
+  dns_name = "petertawfik.joonix.net." # Replace with your domain
+}
+
+resource "google_dns_record_set" "my_record" {
+  managed_zone = google_dns_managed_zone.my_zone.name
+  name         = "test1.petertawfik.joonix.net" # Change as needed
+  type         = "A"
+  ttl          = 300
+
+  rrdatas = [google_compute_instance.default.network_interface[0].access_config[0].nat_ip]
+
 }
