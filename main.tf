@@ -11,8 +11,8 @@ resource "google_storage_bucket" "peter-bucket-1" {
 
 # Create an instance to deploy database on it to simulate deployment
 provider "google" {
-  project = "peter-test-2024"  # Replace with your actual GCP project ID
-  region  = "europe-west2"      # Set your preferred region
+  project = "peter-test-2024" # Replace with your actual GCP project ID
+  region  = "europe-west2"    # Set your preferred region
 }
 
 resource "google_compute_instance" "default" {
