@@ -47,7 +47,7 @@ resource "google_dns_managed_zone" "my_zone" {
 
 resource "google_dns_record_set" "my_record" {
   managed_zone = google_dns_managed_zone.my_zone.name
-  name         = "test1.petertawfik.joonix.net" # Change as needed
+  name         = "test1.petertawfik.joonix.net." # Change as needed
   type         = "A"
   ttl          = 300
 
