@@ -12,7 +12,7 @@ resource "google_storage_bucket" "peter-bucket-1" {
 # Create an instance to deploy database on it to simulate deployment
 
 resource "google_compute_instance" "default" {
-  name         = "Database-instance"
+  name         = "database-instance"
   machine_type = "e2-standard-4"
   project      = "peter-test-2024"
   zone         = "europe-west2-a"
