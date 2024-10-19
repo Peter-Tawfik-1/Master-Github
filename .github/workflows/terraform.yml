@@ -12,8 +12,8 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: production
-    
+    environment: production   #### Ignore the error in VS it's working based on my testing ( Peter 19 Oct 2024)
+
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
