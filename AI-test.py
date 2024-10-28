@@ -30,9 +30,9 @@ Question_to_AI = """The answer must be SQL command or a bash script to be execut
 #Question_to_AI = """Provide a comprehensive overview of  in database security.  Include key concepts, best practices, common threats, mitigation strategies, relevant technologies, and industry standards.  Explain the topic in detail, offering practical examples where applicable.  If the topic is too broad, focus on the most critical aspects and suggest further areas for exploration."""
 
 generation_config = {
-    "max_output_tokens": 8192,
-    "temperature": 1,
-    "top_p": 0.95,
+    "max_output_tokens": 2000,
+    "temperature": 2,
+    "top_p": 0.5,
 }
 
 safety_settings = [
