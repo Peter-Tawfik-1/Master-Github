@@ -24,7 +24,7 @@ resource "google_compute_instance" "default" {
     initialize_params {
       image = "rhel-9-v20241009"
       labels = {
-        my_label = "database-instance-test"
+        my_label = "database-instance"
       }
     }
   }
@@ -39,8 +39,9 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = <<-EOF
     #!/bin/bash
-    echo "Hello from startup script!" > /tmp/hello.txt
-  EOF
+    Sudo echo hi > /tmp/test.txt
+    echo peter >> /tmp/test.txt
+    EOF
 }
 
 
