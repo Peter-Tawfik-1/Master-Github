@@ -37,14 +37,15 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  metadata_startup_script = <<-EOF
-    #!/bin/bash
-    Sudo echo hi > /tmp/test.txt
-    echo peter >> /tmp/test.txt
-    EOF
+  metadata = {
+    startup-script = <<-EOF
+      #!/bin/bash
+      # Log the output to /tmp/startup-script.log for debugging
+      exec > /tmp/startup-script.log 2>&1
+      echo "Running startup script..."
+  EOF
+  }
 }
-
-
 /* DEBUG section will be added 
   metadata_startup_script = <<-EOF
     #!/bin/bash
