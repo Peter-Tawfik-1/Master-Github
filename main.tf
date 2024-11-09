@@ -50,8 +50,8 @@ resource "google_compute_instance" "default" {
     wget https://download.oracle.com/otn-pub/otn_software/db-free/oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
     sudo dnf -y install oracle-database-preinstall-23ai-1.0-2.el9.x86_64.rpm > /home/peter/log/install_log.txt
     sudo dnf install -y oracle-database-free* >> /home/peter/log/install_log.txt
-    export DB_PASSWORD=sys
-    (echo "${DB_PASSWORD}"; echo "${DB_PASSWORD}";) | sudo /etc/init.d/oracle-free-23ai configure >> /home/peter/log/config_log.txt 
+    #export DB_PASSWORD=sys
+    (echo sys; echo sys;) | sudo /etc/init.d/oracle-free-23ai configure >> /home/peter/log/config_log.txt 
   EOF
 }
 
