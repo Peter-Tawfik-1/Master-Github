@@ -1,7 +1,7 @@
 /*
 # Create a bucket
 resource "google_storage_bucket" "peter-bucket-1" {
-  name                     = "peter-bucket-tf-1"
+  name                     = "peter-bucket-oracle-source"
   project                  = "peter-test-2024"
   location                 = "US"
   force_destroy            = false
@@ -43,6 +43,7 @@ resource "google_compute_instance" "default" {
   EOF
 }
 
+/*
 resource "google_dns_managed_zone" "my_zone" {
   name     = "test"
   dns_name = "petertawfik.joonix.net."
@@ -57,3 +58,4 @@ resource "google_dns_record_set" "my_record" {
   rrdatas = [google_compute_instance.default.network_interface[0].access_config[0].nat_ip]
 
 }
+*/
