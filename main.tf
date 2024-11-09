@@ -39,9 +39,8 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = <<-EOF
     #!/bin/bash
-    Sudo echo hi > /tmp/test.txt
-    echo peter >> /tmp/test.txt
-    EOF
+    echo "Hello from startup script!" > /tmp/hello.txt
+  EOF
 }
 
 
