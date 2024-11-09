@@ -24,7 +24,7 @@ resource "google_compute_instance" "default" {
     initialize_params {
       image = "rhel-9-v20241009"
       labels = {
-        my_label = "database-instance"
+        my_label = "database-instance-test"
       }
     }
   }
@@ -37,6 +37,15 @@ resource "google_compute_instance" "default" {
     }
   }
 
+  metadata_startup_script = <<-EOF
+    #!/bin/bash
+    Sudo echo hi > /tmp/test.txt
+    echo peter >> /tmp/test.txt
+    EOF
+}
+
+
+/* DEBUG section will be added 
   metadata_startup_script = <<-EOF
     #!/bin/bash
 
