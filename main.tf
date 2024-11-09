@@ -31,15 +31,17 @@ resource "google_compute_instance" "default" {
 
   network_interface {
     network = "default"
-    access_config {}
+    network_ip = "10.154.0.4"
+    access_config {
+      nat_ip = "34.147.166.38"
+    }
   }
 
   metadata_startup_script = <<-EOF
     #!/bin/bash
-    echo "Hello, World!" > /var/www/html/index.html
     sudo yum update -y
-    sudo yum install -y httpd
-    sudo systemctl start httpd
+    sudo yum install -y libaio bc > /tmp/log.txt
+    sudo yum install -y oracle-database-preinstall-21c >> /tmp/log.txt
   EOF
 }
 
