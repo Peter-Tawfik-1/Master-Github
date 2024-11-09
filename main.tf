@@ -11,8 +11,8 @@ resource "google_storage_bucket" "peter-bucket-1" {
 
 # Create an instance to deploy database on it to simulate deployment
 provider "google" {
-  project = "peter-test-2024" # Replace with your actual GCP project ID
-  region  = "europe-west2"    # Set your preferred region
+  project = "peter-test-2024" # GCP project ID
+  region  = "europe-west2"    # europe-west2 region
 }
 
 resource "google_compute_instance" "default" {
@@ -45,12 +45,12 @@ resource "google_compute_instance" "default" {
 
 resource "google_dns_managed_zone" "my_zone" {
   name     = "test"
-  dns_name = "petertawfik.joonix.net." # Replace with your domain
+  dns_name = "petertawfik.joonix.net."
 }
 
 resource "google_dns_record_set" "my_record" {
   managed_zone = google_dns_managed_zone.my_zone.name
-  name         = "test1.petertawfik.joonix.net." # Change as needed
+  name         = "test1.petertawfik.joonix.net."
   type         = "A"
   ttl          = 300
 
