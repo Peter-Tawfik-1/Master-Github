@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = "default"
+    network    = "default"
     network_ip = "10.154.0.4"
     access_config {
       nat_ip = "34.147.166.38"
