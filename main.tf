@@ -36,16 +36,9 @@ resource "google_compute_instance" "default" {
       nat_ip = "34.147.166.38"
     }
   }
-
-  metadata = {
-    startup-script = <<-EOF
-      #!/bin/bash
-      # Log the output to /tmp/startup-script.log for debugging
-      exec > /tmp/startup-script.log 2>&1
-      echo "Running startup script..."
-  EOF
-  }
 }
+
+
 /* DEBUG section will be added 
   metadata_startup_script = <<-EOF
     #!/bin/bash

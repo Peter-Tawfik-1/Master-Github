@@ -50,5 +50,20 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
-      env:
-        GOOGLE_CREDENTIALS: ${{ SECRETS.GCP_PROJECT_IAM_KEY}}
+      timeout-minutes: 3
+      env: 
+        GOOGLE_CREDENTIALS: ${{ SECRETS.GCP_PROJECT_IAM_KEY }}
+
+    - name: Get Instance IP Address
+      run: |
+          INSTANCE_IP=$(terraform output -raw instance_ip_address)
+          echo "INSTANCE_IP=$INSTANCE_IP" >> $GITHUB_ENV
+
+    - id: 'compute-ssh'
+      uses: 'google-github-actions/ssh-compute@v1'
+      with:
+        instance_name: 'database-instance'
+        zone: 'europe-west2-a'
+        ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
+        command: 'echo Hello world'
+
