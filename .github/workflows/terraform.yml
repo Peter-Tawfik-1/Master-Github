@@ -5,15 +5,15 @@ name: 'Terraform-create-GCP-instance-fixedip'
 #    branches: [ "main" ]
 #  pull_request:
 
-  on:
-    workflow_dispatch:
-      inputs:
-        env:
-          description: 'Environment to deploy to'
-          required: true
-          default: 'production'
-          type: choice
-          options: ['staging','production']
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options: ['staging','production']
     
 permissions:
   contents: read
