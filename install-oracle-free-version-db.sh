@@ -24,5 +24,5 @@ export ORAENV_ASK=NO
 #sudo vi /etc/ssh/sshd_config
 #PasswordAuthentication yes
 #sudo service sshd restart
-ClientAliveInterval  1200
-ClientAliveCountMax 3
+#ClientAliveInterval  1200
+#ClientAliveCountMax 3
