@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Terraform-create-GCP-instance-fixedip'
 
 #on:
 #  push:
