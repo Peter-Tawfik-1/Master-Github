@@ -25,9 +25,7 @@ def generate():
         print(response.text, end="")
 
 user_input = input("Please enter question: ")
-Question_to_AI = """The answer must be SQL command or a bash script to be executed without any explanation or comments. Just a script to be executed as it is for testing. Database engine version is MySQL 8""" + user_input 
-
-#Question_to_AI = """Provide a comprehensive overview of  in database security.  Include key concepts, best practices, common threats, mitigation strategies, relevant technologies, and industry standards.  Explain the topic in detail, offering practical examples where applicable.  If the topic is too broad, focus on the most critical aspects and suggest further areas for exploration."""
+Question_to_AI = """The answer must be SQL command or a bash script to be executed without any explanation or comments. Just a script to be executed as it is for testing. Database engine version is Oracle database version 23""" + user_input 
 
 generation_config = {
     "max_output_tokens": 2000,
