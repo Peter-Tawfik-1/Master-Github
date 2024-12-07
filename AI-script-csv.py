@@ -32,12 +32,32 @@ def generate_sql(question):
     responses = model.generate_content(
         [Question_to_AI],
         generation_config=generation_config,
+        safety_settings=safety_settings,
         stream=True,
     )
     result = ""
     for response in responses:
         result += response.text
     return result.strip()
+
+safety_settings = [
+    SafetySetting(
+        category=SafetySetting.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+        threshold=SafetySetting.HarmBlockThreshold.OFF
+    ),
+    SafetySetting(
+        category=SafetySetting.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+        threshold=SafetySetting.HarmBlockThreshold.OFF
+    ),
+    SafetySetting(
+        category=SafetySetting.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+        threshold=SafetySetting.HarmBlockThreshold.OFF
+    ),
+    SafetySetting(
+        category=SafetySetting.HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold=SafetySetting.HarmBlockThreshold.OFF
+    ),
+]
 
 def main():
     input_file_path = input("Enter the path to your input CSV file: ")
@@ -71,3 +91,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    
