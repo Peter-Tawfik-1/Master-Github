@@ -1,3 +1,4 @@
+import csv
 import base64
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part, SafetySetting
@@ -19,8 +20,10 @@ def generate():
         print(response.text, end="")
 
 user_input = input("Please enter question: ")
-Question_to_AI = """The answer must be SQL command or a bash script to be executed without any explanation or comments. 
-Just a script to be executed as it is for testing. The database engine version is Oracle database version 23""" + user_input 
+Question_to_AI = """The answer must be SQL command or a bash script to be executed 
+without any explanation or comments. 
+Just a script to be executed as it is for testing. 
+The database engine version is Oracle database version 23""" + user_input 
 
 generation_config = {
     "max_output_tokens": 2000,
