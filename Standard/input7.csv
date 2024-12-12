@@ -1,0 +1,4 @@
+﻿All databases must not allow a bypass of authentication via the localhost exception. 
+"Authentication must be enabled, including instances that are deployed via a shared cluster. "
+Any authentication mechanisms used must be Authority approved. 
+Database credentials must provide access only to functionality and operations required to discharge the function for which those credentials are issued  

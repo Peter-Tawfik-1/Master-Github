@@ -1,0 +1,3 @@
+﻿Database systems must take regular backups.   
+Verification of backups must be in place for all Authority databases. 
+Replication slave backups must be made for all Authority database systems.  

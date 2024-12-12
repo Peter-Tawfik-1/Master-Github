@@ -1,0 +1,17 @@
+﻿Data validation must be used to ensure the DBMS’s stability and integrity of stored data. 
+New DBMS technologies must be approved by the Design Authority prior to use or first deployment.
+"All server operating systems that the database is installed upon must be hardened in line with SS008 Server Operating System Security Standard 
+[Ref. A]. "
+"Access to a DBMS must apply the principle of least privilege and only have the permissions required to achieve the current action. Common applications usually require read access, but often write or update access as well. Rarely is “drop table” or other access required by a user interface"
+DBMS links must not be defined between production and non-production DBMSs.  
+The DBMS transactions / queries from applications must be restricted from accessing the DBMS via any means except those that are provided by the available stored procedures.  The use of ad-hoc queries by application users is strictly prohibited.
+"Input checks must be applied to limit the number of DBMS transactions which contain: 
+a)	Missing and/or incomplete data; 
+b)	Out of range values; 
+c)	Unauthorised or inconsistent data;  
+d)	Invalid characters in data fields; 
+e) Exceeding upper or lower date volume limits. See SS-003 Software Development 
+Security Standard [Ref. D] "
+Dual input or other input checks such as boundary checking (content inspection/URL Filtering) or limiting fields to specific ranges of input data must be used. 
+"Vulnerability assessments must be completed on 
+a regular basis in line with the Technical Vulnerability Management Policy [Ref. J]. "

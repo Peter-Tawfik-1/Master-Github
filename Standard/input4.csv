@@ -1,0 +1,18 @@
+﻿The DBMS must adhere to the requirements contained within SS-012 Protective Monitoring Security Standard [Ref. H] 
+"The clocks of all Applications must be synchronised with the Authority Reference (Master) Clock. For cloud-based systems, the cloud providers’ time services are sufficient for time reference synchronisation, as the Authority does not have reliable means to share Authority Master Clock data with external parties.   "
+Logs may be appended to the Operating System logs or be self-contained within the application. 
+"At a minimum, the following Application 
+Administration / Operator items must be recorded and logged:  
+-	All system alarms raised; 
+-	start up; 
+-	shutdown; 
+-	The creation, alteration, or deletion (drop) of: databases, any database storage structure, and database tables, indexes, accounts and objects; 
+-	The enabling and disabling of audit functionality; 
+-	The granting and revoking of DBMS system level privileges; 
+-	Any action that returns an error message because the object referenced does not exist; 
+-	Any action that renames a DBMS object; 
+-	Any action that grants or revokes object privileges from a DBMS role or DBMS account; 
+-	All modifications to the data dictionary or DBMS system configuration; 
+-	All DBMS connection failures are audited. Where possible, the DBA will ensure that both successful and unsuccessful connection attempts are audited; 
+-	Failed Logon attempts, password locks. 
+-	Failed commands "

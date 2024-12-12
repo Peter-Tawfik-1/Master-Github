@@ -1,0 +1,7 @@
+﻿Encryption must be applied as per Authority standards for all data transmitted between systems via TLS or SSL
+All encryption material that is required for secure communications must be only accessible via the requesting service as read only access. 
+The database files and data must be encrypted.   
+All encrypted channels and stored data must not use a default or example certificate. 
+All encryption keys must be generated for a specific use case. 
+All encryption keys must be fully protected.
+All encryption certificates must be provided by the Authority Enterprise Certificate Authority (CA).

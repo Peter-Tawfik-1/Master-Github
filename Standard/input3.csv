@@ -1,0 +1,12 @@
+﻿Users must be authenticated before being granted access to the DBMS application permissions or its resources
+"DBMSs must authenticate the user (or application requesting access), or if that is not possible, then it must record and log the user which requested that function.    "
+Central access control systems should be used to manage access to the DBMS.
+User privileges must be granted on the basis of inclusion into roles.  Privileges must not be granted directly to application / user accounts on the DBMS. Please refer to SS-001 pt.2 Privileged User Access Security Standard [Ref. F] for more information.  
+All databases must ensure that the HTTP interface is disabled. 
+Role-based access control must be enabled and configured appropriately in a fully defined Role Based Access Control (RBAC) model
+Each role for each database must only grant the necessary privileges as per the principle of least privilege.  
+Each database deployment must ensure that access to data/files reflects the defined RBAC model and assigned permissions.  
+"Replication slave backups must be made for all Authority database systems, and in line with SS-035 Secure Backup & Recovery Security Standard [Ref. G]. "
+Databases must not be configured with blank passwords. 
+"All default passwords must be changed, encrypted and verified. "
+"Any anonymous, default accounts and sample data must be removed from the database. "
