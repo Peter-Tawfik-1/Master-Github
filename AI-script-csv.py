@@ -79,7 +79,7 @@ def main():
                     question = row[0]
                     print(f"Processing row {i}: {question}")
                     sql_output = generate_sql(question)
-                    sqlfile.write(sql_output + '\n\n')
+                    sqlfile.write(sql_output + '\n\n' + "==============================================="  + '\n\n')
                 except Exception as e:
                     print(f"Error processing row {i}: {e}")
     except FileNotFoundError:
