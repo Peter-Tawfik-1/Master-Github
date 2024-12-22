@@ -1,33 +1,18 @@
-﻿Naming conventions must clearly distinguish between production and non-production resources. 
-All databases must be hosted on servers which do not perform any other functionality such as “web or application tier” or “Domain Services” functionality.  
-All databases must ensure that server-side scripting is disabled if not needed. 
-"The default passwords for accounts and services that are mandatory, for example System 
-Administrator and Listener, must be changed prior to being deployed.   "
-Test databases must not be installed upon production systems.  
-The versions of DBMS used must still be supported by the vendor.  
-"All administrator, user or application traffic to and from the DBMS must encrypted in line with SS-007 Use of Cryptography security standard [Ref. C].    "
-"The database must not use unencrypted protocols or non-secure services (for example, HTTP, FTP etc.).  "
-Unnecessary services or ports must be disabled or removed and where possible. 
-Databases must be configured to only listen for network connections on authorised interfaces.  
-The database servers must restrict network access using IP filtering. 
-The DBMS must avoid the need to run services with privileged accounts on the underlying host Operating System.  
-All installations of a DBMS must be up to date with all appropriate security patches prior to deployment into service in line with SS-033 Security Patching Standard [Ref. B]. 
-Only licensed software which has been verified as being authentic with the supplier can be used for a DBMS.  
-All DMBS software authenticity checks must be completed via a cryptographic verification or some other form of secure validation.
-"Default accounts, examples, code, files, objects etc. that are no longer required after installation must be deleted from the DBMS and also the host operating system."
-"The DBMS configuration must not permit default accounts (e.g. PUBLIC) to remain active.  
- 
-These must be either: 
-a)	Renamed, deleted or disabled (as appropriate); or 
-b)	The DBMS / object privileges must not be granted to default accounts which cannot be 
-removed (or otherwise disabled) unless there is an explicit vendor requirement to do so; or 
-c) If the default account cannot be renamed, deleted or disabled (such as root) access must be restricted to known administrative groups. 
-Access to such accounts / functions (which cannot be renamed, deleted or disabled) must prevent direct access and require the user to logon with their individual account and then escalate / change their privilege in a controlled and logged fashion.  "
-
-
-
-
-
-
-
- 
+﻿Reference ,Minimum Technical Security Measures 
+11.2.1,Naming conventions must clearly distinguish between production and non-production resources. 
+11.2.2,All databases must be hosted on servers which do not perform any other functionality such as “web or application tier” or “Domain Services” functionality.  
+11.2.3,All databases must ensure that server-side scripting is disabled if not needed. 
+11.2.4,"The default passwords for accounts and services that are mandatory, for example System Administrator and Listener, must be changed prior to being deployed.   "
+11.2.5,Test databases must not be installed upon production systems.  
+11.2.6,The versions of DBMS used must still be supported by the vendor.  
+11.2.7,"All administrator, user or application traffic to and from the DBMS must encrypted in line with SS-007 Use of Cryptography security standard [Ref. C].    "
+11.2.8,"The database must not use unencrypted protocols or non-secure services (for example, HTTP, FTP etc.).  "
+11.2.9,Unnecessary services or ports must be disabled or removed and where possible. 
+11.2.10,Databases must be configured to only listen for network connections on authorised interfaces.  
+11.2.11,The database servers must restrict network access using IP filtering. 
+11.2.12,The DBMS must avoid the need to run services with privileged accounts on the underlying host Operating System.  
+11.2.13,All installations of a DBMS must be up to date with all appropriate security patches prior to deployment into service in line with SS-033 Security Patching Standard [Ref. B]. 
+11.2.14,Only licensed software which has been verified as being authentic with the supplier can be used for a DBMS.  
+11.2.15,All DMBS software authenticity checks must be completed via a cryptographic verification or some other form of secure validation.
+11.2.16,"Default accounts, examples, code, files, objects etc. that are no longer required after installation must be deleted from the DBMS and also the host operating system."
+11.2.17,"The DBMS configuration must not permit default accounts (e.g. PUBLIC) to remain active.  These must be either: a) Renamed, deleted or disabled (as appropriate); or b) The DBMS / object privileges must not be granted to default accounts which cannot be removed (or otherwise disabled) unless there is an explicit vendor requirement to do so; or c) If the default account cannot be renamed, deleted or disabled (such as root) access must be restricted to known administrative groups.  Access to such accounts / functions (which cannot be renamed, deleted or disabled) must prevent direct access and require the user to logon with their individual account and then escalate / change their privilege in a controlled and logged fashion.  "
